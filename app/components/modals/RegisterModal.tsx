@@ -50,6 +50,7 @@ export default function RegisterModal() {
       <Input
         id="email"
         label="Email"
+        type="email"
         disabled={isLoading}
         register={register}
         errors={errors}
