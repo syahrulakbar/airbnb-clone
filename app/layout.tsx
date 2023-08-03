@@ -3,8 +3,9 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import RegisterModal from "./components/modals/RegisterModal";
-import ToasterProvider from "./providers/ToasterProvider";
+import RentModal from "./components/modals/RentModal";
 import LoginModal from "./components/modals/LoginModal";
+import ToasterProvider from "./providers/ToasterProvider";
 import { getCurrentUser } from "./actions/getCurrentUser";
 
 export const metadata = {
@@ -24,6 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={font.className}>
         <ToasterProvider />
         <RegisterModal />
+        <RentModal />
         <LoginModal />
         <Navbar currentUser={currentUser} />
         {children}
