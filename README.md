@@ -1,8 +1,24 @@
+# AIRBNB-CLONE
+
+I Create this project to learn NEXT JS 13 with Typescript following [Code With Antonio](https://www.youtube.com/watch?v=c_-b_isI4vg&t=15666s)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, create file .env and input this:
+
+```bash
+DATABASE_URL="your mongodb url"
+NEXTAUTH_SECRET="your secret"
+
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-client-secret
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="your-cloudinary-cloud-name"
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
