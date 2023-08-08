@@ -14,7 +14,6 @@ export async function POST(request: Request) {
       hashedPassword,
     },
   });
-  // return new NextResponse("Success Register Account", { status: 201 });
 
   return NextResponse.json(user);
 }

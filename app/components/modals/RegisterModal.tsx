@@ -39,6 +39,8 @@ export default function RegisterModal() {
       .post("/api/register", data)
       .then(() => {
         registerModal.onClose();
+        toast.success("Account created successfully!");
+        loginModal.onOpen();
       })
       .catch((error) => toast.error("Something went wrong!"))
       .finally(() => {
