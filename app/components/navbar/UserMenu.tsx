@@ -34,7 +34,7 @@ export default function UserMenu({ currentUser }: UserMenuProps) {
     rentModal.onOpen();
   }, [currentUser, loginModal, rentModal]);
   return (
-    <div className="relative ">
+    <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={onRent}
