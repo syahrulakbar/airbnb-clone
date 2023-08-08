@@ -73,6 +73,8 @@ const ListingClient = ({ listing, reservations = [], currentUser }: ListingClien
       .then(() => {
         toast.success("Listing reserved!");
         setDateRange(initialDateRange);
+        // redirect to /trips
+
         router.push("/trips");
       })
       .catch(() => {

@@ -112,9 +112,9 @@ const Categories = () => {
     <Container>
       <div
         className="
-        gap-5
-        lg:gap-0
-          pt-4
+          gap-5
+          lg:gap-0
+          p-4
           flex 
           flex-row 
           items-center 

@@ -251,6 +251,7 @@ export default function RentModal() {
       secondaryActionLabel={secondaryActionLabel}
       title="Airbnb your home!"
       body={bodyContent}
+      disabled={isLoading}
     />
   );
 }
