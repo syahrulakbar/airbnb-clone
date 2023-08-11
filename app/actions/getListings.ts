@@ -9,6 +9,7 @@ export interface IListingsParams {
   endDate?: string;
   locationValue?: string;
   category?: string;
+  price?: number;
 }
 
 export default async function getListings(params: IListingsParams) {
@@ -22,6 +23,7 @@ export default async function getListings(params: IListingsParams) {
       endDate,
       locationValue,
       category,
+      price,
     } = params;
 
     let query: any = {};
@@ -45,6 +47,12 @@ export default async function getListings(params: IListingsParams) {
     if (bathroomCount) {
       query.bathroomCount = {
         gte: +bathroomCount,
+      };
+    }
+
+    if (price) {
+      query.price = {
+        lte: +price,
       };
     }
 

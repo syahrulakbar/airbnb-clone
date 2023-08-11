@@ -15,6 +15,7 @@ export default function Search() {
   const startDate = params?.get("startDate");
   const endDate = params?.get("endDate");
   const guestCount = params?.get("guestCount");
+  const price = params?.get("price");
 
   const locationLabel = useMemo(() => {
     if (locationValue) {
@@ -48,6 +49,14 @@ export default function Search() {
     return "Add Guest";
   }, [guestCount]);
 
+  const priceLabel = useMemo(() => {
+    if (price) {
+      return `$${price}`;
+    }
+
+    return "Unlimited Budget";
+  }, [price]);
+
   return (
     <div
       onClick={searchModal.onOpen}
@@ -57,6 +66,9 @@ export default function Search() {
         <div className="text-sm font-semibold px-6">{locationLabel}</div>
         <div className="hidden sm:block text-sm px-6 font-semibold border-x-[1px] flex-1 text-center">
           {durationLabel}
+        </div>
+        <div className="hidden sm:block text-sm px-6 font-semibold border-x-[1px] flex-1 text-center">
+          {priceLabel}
         </div>
         <div className="text-sm pl-6 pr-2 text-gray-600 flex flex-row items-center gap-3">
           <div className="hidden sm:block">{guestLabel}</div>

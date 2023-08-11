@@ -12,11 +12,13 @@ import { formatISO } from "date-fns";
 import Heading from "../Heading";
 import Calender from "../Inputs/Calender";
 import Counter from "../Inputs/Counter";
+import PriceRange from "../Inputs/PriceRange";
 
 enum STEPS {
   LOCATION = 0,
   DATE = 1,
-  INFO = 2,
+  PRICE = 2,
+  INFO = 3,
 }
 
 const SearchModal = () => {
@@ -29,6 +31,7 @@ const SearchModal = () => {
   const [guestCount, setGuestCount] = useState(1);
   const [roomCount, setRoomCount] = useState(1);
   const [bathroomCount, setBathroomCount] = useState(1);
+  const [price, setPrice] = useState(1000);
   const [dateRange, setDateRange] = useState<Range>({
     startDate: new Date(),
     endDate: new Date(),
@@ -67,6 +70,7 @@ const SearchModal = () => {
       guestCount,
       roomCount,
       bathroomCount,
+      price,
     };
 
     if (dateRange.startDate) {
@@ -99,6 +103,7 @@ const SearchModal = () => {
     router,
     searchModal,
     step,
+    price,
   ]);
 
   const actionLabel = useMemo(() => {
@@ -138,6 +143,15 @@ const SearchModal = () => {
         <Heading title="When do you plan to go?" subtitle="Make sure everyone is free!" />
 
         <Calender value={dateRange} onChange={(value) => setDateRange(value.selection)} />
+      </div>
+    );
+  }
+
+  if (step === STEPS.PRICE) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading title="Price Range" subtitle="make sure you have it planned!" />
+        <PriceRange value={price} onChange={(value) => setPrice(value)} />
       </div>
     );
   }
