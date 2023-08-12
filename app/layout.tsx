@@ -12,6 +12,10 @@ import SearchModal from "./components/modals/SearchModal";
 export const metadata = {
   title: "Airbnb",
   description: "Trying make a clone of Airbnb",
+  icons: {
+    favicon: "/airbnb.png",
+    icon: "/airbnb.png",
+  },
 };
 
 const font = Nunito({
